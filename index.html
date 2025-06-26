@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ffe0e9, #ffd6e0);
+      color: #333;
+      text-align: center;
+      padding: 50px;
+      transition: all 0.5s ease;
+    }
+
+    .question-box, .letter-box {
+      background: white;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #d63384;
+    }
+
+    button {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #e03e5f;
+    }
+
+    #letter {
+      display: none;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hey Love 💖</h1>
+  <div class="question-box" id="q1">
+    <h2>Do you love me?</h2>
+    <button onclick="next('q1', 'q2')">Yes, I do! 😍</button>
+    <button onclick="next('q1', 'q2')">More than anything! 💘</button>
+  </div>
+
+  <div class="question-box" id="q2" style="display:none;">
+    <h2>How much do you love me?</h2>
+    <button onclick="next('q2', 'q3')">To the moon and back 🌙</button>
+    <button onclick="next('q2', 'q3')">More than words can say 💫</button>
+  </div>
+
+  <div class="question-box" id="q3" style="display:none;">
+    <h2>Will you always be mine?</h2>
+    <button onclick="next('q3', 'letter')">Forever and ever 💍</button>
+  </div>
+
+  <div class="letter-box" id="letter">
+    <h2>💌 My Heart's Letter to You</h2>
+    <p>
+      My Love,
+
+      From the moment our paths crossed, my world became brighter, my smiles became wider, and my heart became fuller.
+
+      Every little thing you do — the way you laugh, the way you look at me, the way you hold my hand — makes me fall for you more deeply every single day.
+
+      I’ve never been more certain of anything in my life: I want you, and only you, in every tomorrow I have left.
+
+      So here I am, with all the love I carry in my heart, asking you...
+
+      💍 **Will you be mine forever?**  
+      
+      Yours, forever and beyond,  
+      Pabitra
+    </p>
+  </div>
+
+  <script>
+    function next(hideId, showId) {
+      document.getElementById(hideId).style.display = 'none';
+      document.getElementById(showId).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
