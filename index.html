@@ -7,20 +7,70 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffe0e9, #ffd6e0);
+      background: #000;
       color: #333;
       text-align: center;
       padding: 50px;
       transition: all 0.5s ease;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .background-images {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .image-row {
+      display: flex;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .image-row:nth-child(odd) {
+      animation-name: scrollRight;
+      animation-duration: 25s;
+    }
+
+    .image-row:nth-child(even) {
+      animation-name: scrollLeft;
+      animation-duration: 30s;
+    }
+
+    .image-row img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      margin: 5px;
+      border-radius: 10px;
+      filter: brightness(0.7) saturate(1.2);
+    }
+
+    @keyframes scrollRight {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     .question-box, .letter-box {
-      background: white;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
       padding: 30px;
       margin: 30px auto;
       max-width: 500px;
       border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
     }
 
     h1, h2 {
@@ -50,6 +100,48 @@
   </style>
 </head>
 <body>
+  <div class="background-images">
+    <div class="image-row">
+      <img src="Public\20241105_113854.jpg" alt="Romantic sunset">
+      <img src="Public\20241105_113923.jpg" alt="Love hearts">
+      <img src="Public\20241105_114855.jpg" alt="Couple silhouette">
+      <img src="Public\20241105_120242.jpg" alt="Red roses">
+      <img src="Public\20241229_132951.jpg" alt="Beautiful landscape">
+      <img src="Public\20241229_133221.jpg" alt="Romantic sunset">
+      <img src="Public\20250202_161335~2.jpg" alt="Love hearts">
+      <img src="Public\20250202_162505~2.jpg alt="Couple silhouette">
+    </div>
+    <div class="image-row">
+      <img src="Public\20250202_162505~2.jpg" alt="Pink flowers">
+      <img src="Public\20250202_163240~4.jpg" alt="Romantic dinner">
+      <img src="Public\23418578290942e395ae555568af80f0.jpg" alt="Golden sunset">
+      <img src="Public\IMG-20241005-WA0009.jpg" alt="Wedding rings">
+      <img src="Public\IMG-20241120-WA0044.jpg" alt="Beach romance">
+      <img src="Public\IMG-20241120-WA0048.jpg" alt="Pink flowers">
+      <img src="Public\IMG-20241225-WA0004.jpg" alt="Romantic dinner">
+      <img src="Public\IMG-20250119-WA0052.jpg" alt="Golden sunset">
+    </div>
+    <div class="image-row">
+      <img src="Public\IMG-20250121-WA0029 (1).jpg" alt="Love letters">
+      <img src="Public\IMG-20250121-WA0039 (1).jpg" alt="Couple walking">
+      <img src="Public\IMG-20250121-WA0099.jpg" alt="Cherry blossoms">
+      <img src="Public\IMG-20250121-WA0100.jpg" alt="Red roses">
+      <img src="Public\IMG-20250125-WA0190.jpg" alt="Romantic candles">
+      <img src="Public\IMG-20250203-WA0024.jpg" alt="Love letters">
+      <img src="Public\IMG-20250214-WA0125.jpg" alt="Couple walking">
+      <img src="Public\IMG-20250216-WA0171.jpg" alt="Cherry blossoms">
+    </div>
+    <div class="image-row">
+      <img src="Public\Screenshot_20250613_204457_WhatsApp.jpg" alt="Heart balloons">
+      <img src="Public\Screenshot_20250613_204503_WhatsApp.jpg" alt="Mountain love">
+      <img src="Public\23418578290942e395ae555568af80f0.jpg" alt="Romantic bridge">
+      <img src="Public\IMG-20250119-WA0052.jpg" alt="Date night">
+      <img src="Public\IMG-20250125-WA0190.jpg" alt="Pink romance">
+      <img src="Public\20241229_133221.jpg" alt="Heart balloons">
+      <img src="Public\IMG-20250214-WA0125.jpg" alt="Mountain love">
+      <img src="Public\IMG-20250214-WA0125.jpg" alt="Romantic bridge">
+    </div>
+  </div>
 
   <h1>Hey Love 💖</h1>
   <div class="question-box" id="q1">
@@ -78,7 +170,7 @@
 
       Every little thing you do — the way you laugh, the way you look at me, the way you hold my hand — makes me fall for you more deeply every single day.
 
-      I’ve never been more certain of anything in my life: I want you, and only you, in every tomorrow I have left.
+      I've never been more certain of anything in my life: I want you, and only you, in every tomorrow I have left.
 
       So here I am, with all the love I carry in my heart, asking you...
 
