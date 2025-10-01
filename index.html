@@ -1,191 +1,177 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For My Love</title>
+  <title>Happy Birthday Princess ❤️</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
-      color: #333;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
       text-align: center;
-      padding: 50px;
-      transition: all 0.5s ease;
-      position: relative;
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
       overflow-x: hidden;
     }
-
-    .background-images {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.3;
+    header {
+      padding: 40px;
+      font-size: 2em;
+      color: #fff;
     }
-
-    .image-row {
-      display: flex;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-
-    .image-row:nth-child(odd) {
-      animation-name: scrollRight;
-      animation-duration: 25s;
-    }
-
-    .image-row:nth-child(even) {
-      animation-name: scrollLeft;
-      animation-duration: 30s;
-    }
-
-    .image-row img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      margin: 5px;
-      border-radius: 10px;
-      filter: brightness(0.7) saturate(1.2);
-    }
-
-    @keyframes scrollRight {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    @keyframes scrollLeft {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    .question-box, .letter-box {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      padding: 30px;
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      gap: 10px;
+      justify-content: center;
       margin: 30px auto;
-      max-width: 500px;
-      border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      position: relative;
-      z-index: 1;
     }
-
-    h1, h2 {
-      color: #d63384;
-    }
-
-    button {
-      background: #ff4d6d;
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      margin: 10px;
-      font-size: 16px;
+    .card {
+      width: 100px;
+      height: 120px;
+      background: #fff;
       border-radius: 10px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transform: scale(1);
+      transition: transform 0.2s;
     }
-
-    button:hover {
-      background: #e03e5f;
+    .card.flipped {
+      background: #ffdde1;
+      transform: rotateY(180deg);
     }
-
     #letter {
       display: none;
-      white-space: pre-line;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #444;
+      position: relative;
+    }
+    #letter::before {
+      content: "💌";
+      font-size: 2em;
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    footer {
+      margin: 40px;
+      color: #fff;
+      font-style: italic;
     }
   </style>
 </head>
 <body>
-  <div class="background-images">
-    <div class="image-row">
-      <img src="Public\20241105_113854.jpg" alt="Romantic sunset">
-      <img src="Public\20241105_113923.jpg" alt="Love hearts">
-      <img src="Public\20241105_114855.jpg" alt="Couple silhouette">
-      <img src="Public\20241105_120242.jpg" alt="Red roses">
-      <img src="Public\20241229_132951.jpg" alt="Beautiful landscape">
-      <img src="Public\20241229_133221.jpg" alt="Romantic sunset">
-      <img src="Public\20250202_161335~2.jpg" alt="Love hearts">
-      <img src="Public\20250202_162505~2.jpg alt="Couple silhouette">
-    </div>
-    <div class="image-row">
-      <img src="Public\20250202_162505~2.jpg" alt="Pink flowers">
-      <img src="Public\20250202_163240~4.jpg" alt="Romantic dinner">
-      <img src="Public\23418578290942e395ae555568af80f0.jpg" alt="Golden sunset">
-      <img src="Public\IMG-20241005-WA0009.jpg" alt="Wedding rings">
-      <img src="Public\IMG-20241120-WA0044.jpg" alt="Beach romance">
-      <img src="Public\IMG-20241120-WA0048.jpg" alt="Pink flowers">
-      <img src="Public\IMG-20241225-WA0004.jpg" alt="Romantic dinner">
-      <img src="Public\IMG-20250119-WA0052.jpg" alt="Golden sunset">
-    </div>
-    <div class="image-row">
-      <img src="Public\IMG-20250121-WA0029 (1).jpg" alt="Love letters">
-      <img src="Public\IMG-20250121-WA0039 (1).jpg" alt="Couple walking">
-      <img src="Public\IMG-20250121-WA0099.jpg" alt="Cherry blossoms">
-      <img src="Public\IMG-20250121-WA0100.jpg" alt="Red roses">
-      <img src="Public\IMG-20250125-WA0190.jpg" alt="Romantic candles">
-      <img src="Public\IMG-20250203-WA0024.jpg" alt="Love letters">
-      <img src="Public\IMG-20250214-WA0125.jpg" alt="Couple walking">
-      <img src="Public\IMG-20250216-WA0171.jpg" alt="Cherry blossoms">
-    </div>
-    <div class="image-row">
-      <img src="Public\Screenshot_20250613_204457_WhatsApp.jpg" alt="Heart balloons">
-      <img src="Public\Screenshot_20250613_204503_WhatsApp.jpg" alt="Mountain love">
-      <img src="Public\23418578290942e395ae555568af80f0.jpg" alt="Romantic bridge">
-      <img src="Public\IMG-20250119-WA0052.jpg" alt="Date night">
-      <img src="Public\IMG-20250125-WA0190.jpg" alt="Pink romance">
-      <img src="Public\20241229_133221.jpg" alt="Heart balloons">
-      <img src="Public\IMG-20250214-WA0125.jpg" alt="Mountain love">
-      <img src="Public\IMG-20250214-WA0125.jpg" alt="Romantic bridge">
-    </div>
-  </div>
+  <header>🎂 Happy Birthday My Princess ❤️</header>
+  <p>Sona, flip the cards and match them all to unlock your surprise gift!</p>
+  <div class="game-board" id="game-board"></div>
 
-  <h1>Hey Love 💖</h1>
-  <div class="question-box" id="q1">
-    <h2>Do you love me?</h2>
-    <button onclick="next('q1', 'q2')">Yes, I do! 😍</button>
-    <button onclick="next('q1', 'q2')">More than anything! 💘</button>
-  </div>
-
-  <div class="question-box" id="q2" style="display:none;">
-    <h2>How much do you love me?</h2>
-    <button onclick="next('q2', 'q3')">To the moon and back 🌙</button>
-    <button onclick="next('q2', 'q3')">More than words can say 💫</button>
-  </div>
-
-  <div class="question-box" id="q3" style="display:none;">
-    <h2>Will you always be mine?</h2>
-    <button onclick="next('q3', 'letter')">Forever and ever 💍</button>
-  </div>
-
-  <div class="letter-box" id="letter">
-    <h2>💌 My Heart's Letter to You</h2>
+  <div id="letter">
+    <h2>My Dearest Sona,</h2>
     <p>
-      My Love,
-
-      From the moment our paths crossed, my world became brighter, my smiles became wider, and my heart became fuller.
-
-      Every little thing you do — the way you laugh, the way you look at me, the way you hold my hand — makes me fall for you more deeply every single day.
-
-      I've never been more certain of anything in my life: I want you, and only you, in every tomorrow I have left.
-
-      So here I am, with all the love I carry in my heart, asking you...
-
-      💍 **Will you be mine forever?**  
-      
-      Yours, forever and beyond,  
-      Pabitra
+      From the very first day you became a part of my life, everything felt brighter and more beautiful. You are my luck, my lady, the one who makes my heart feel at home.
     </p>
+    <p>
+      "In your smile, I see something more beautiful than the stars." And truly, Sona, your smile is the most precious sight in my world. You are my Princess, my Debu Sona, my everything.
+    </p>
+    <p>
+      You are not only breathtakingly beautiful, but also adorable in every little thing you do. The way you work so hard, the way you care so deeply, the way you love so purely—these are the things that make me admire you endlessly.
+    </p>
+    <p>
+      "Every love story is beautiful, but ours is my favorite." And with you, Sona, I know I am living the most beautiful love story I could ever dream of.
+    </p>
+    <p>
+      You are my happiness, my strength, my good fortune. With you by my side, I feel complete. I promise to always hold you close, cherish you, and remind you every day how much you mean to me.
+    </p>
+    <p>
+      "I know i'm not perfect, but i wanna be with you forever,please be with me forever,will you?"
+    </p>
+    <p style="text-align:right;">Forever yours,<br>Bubu (Pabitra)</p>
   </div>
+
+  <footer>Made with ❤️ by Bubu for his Princess.</footer>
 
   <script>
-    function next(hideId, showId) {
-      document.getElementById(hideId).style.display = 'none';
-      document.getElementById(showId).style.display = 'block';
+    const cardsArray = ['🎁','🎂','🌹','💕','🎶','🍫','👩‍⚕️','💍'];
+    let gameGrid = [...cardsArray, ...cardsArray];
+    gameGrid.sort(() => 0.5 - Math.random());
+
+    const board = document.getElementById('game-board');
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+    let matches = 0;
+
+    function createBoard() {
+      gameGrid.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.dataset.item = item;
+        card.dataset.index = index;
+        card.innerHTML = "?";
+        card.addEventListener('click', flipCard);
+        board.appendChild(card);
+      });
     }
+
+    function flipCard() {
+      if (lockBoard) return;
+      if (this === firstCard) return;
+
+      this.classList.add('flipped');
+      this.innerHTML = this.dataset.item;
+
+      if (!firstCard) {
+        firstCard = this;
+        return;
+      }
+      secondCard = this;
+      checkForMatch();
+    }
+
+    function checkForMatch() {
+      let isMatch = firstCard.dataset.item === secondCard.dataset.item;
+      isMatch ? disableCards() : unflipCards();
+    }
+
+    function disableCards() {
+      firstCard.removeEventListener('click', flipCard);
+      secondCard.removeEventListener('click', flipCard);
+      matches++;
+      resetBoard();
+      if (matches === cardsArray.length) {
+        setTimeout(() => {
+          document.getElementById('letter').style.display = 'block';
+        }, 500);
+      }
+    }
+
+    function unflipCards() {
+      lockBoard = true;
+      setTimeout(() => {
+        firstCard.classList.remove('flipped');
+        secondCard.classList.remove('flipped');
+        firstCard.innerHTML = "?";
+        secondCard.innerHTML = "?";
+        resetBoard();
+      }, 800);
+    }
+
+    function resetBoard() {
+      [firstCard, secondCard, lockBoard] = [null, null, false];
+    }
+
+    createBoard();
   </script>
 </body>
 </html>
